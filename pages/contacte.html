@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contacte</title>
+</head>
+
+<body bgcolor="#f0ddce">
+
+    <table align="center" cellspacing="10">
+        <tr>
+            <th><a href="../index.html"> 🏠 Acasă</a></th>
+            <th><a href="carti.html"> 📚 Cărți</a></th>
+            <th><a href="contacte.html"> 📞 Contacte</a></th>
+        </tr>
+    </table>
+    <h2 align="center">Contacte</h2>
+    <table align="center" cellspacing="25">
+        <tr>
+            <td>
+                <ul>
+                    <li><b>Adresa:</b> s.Teleșeu, r-nul Orhei, str. Mihai Eminescu nr.6 A
+                        <br /><br />
+                    </li>
+                    <li>
+                        <b>E-mail:</b><a href="mailto:ipteleseu@gmail.com">ipteleseu@gmail.com</a>
+                        <br /><br />
+                    </li>
+                    <li>
+                        <b>Telefon:</b> <a href="tel:+37369405446"> +373 69405446 </a>
+                        <br /><br />
+                    </li>
+                    <li>
+                        <b>Ore de lucru:</b> 09.00-17.00 Lu-Vi
+                    </li>
+                </ul>
+
+            </td>
+            <td>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2707.305971932385!2d28.699943572282802!3d47.26927304914484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cbc38cd2b85b51%3A0xd3d6568c9e660d68!2sGimnaziul%20Ion%20Creanga!5e0!3m2!1sro!2s!4v1723021737010!5m2!1sro!2s"
+                    width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </td>
+        </tr>
+    </table>
+    <hr />
+    <center>
+        <h3>Lasă-ne un mesaj:</h3>
+        <form id="formular" action="https://sheetdb.io/api/v1/vl47m4ug8sbd8" method="post">
+            <input required name="data[nume]" type="text" placeholder="Numele, prenumele"> <br /><br />
+            <input required name="data[email]" type="email" placeholder="E-mail"> <br /><br />
+            <textarea required name="data[mesaj]" cols="16" rows="7" placeholder="Mesajul"></textarea>
+            <br /><br />
+            <input type="submit" value="Transmite">
+        </form>
+    </center>
+    <center>
+        <hr/>
+    <b>Pomana Vitalie 2024 </b><br/>
+    <a href="mailto:ipteleseu@gmail.com">ipteleseu@gmail.com</a>
+</center>
+<br/><br/>
+<script>
+    var form = document.getElementById('formular');
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form.action, {
+          method : "POST",
+          body: new FormData(document.getElementById("formular")),
+      }).then(
+          response => response.json()
+      ).then((html) => {
+        form.reset();
+        alert('success');
+      });
+    });
+  </script>
+
+</body>
+
+</html>
